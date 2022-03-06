@@ -55,8 +55,8 @@ def custom_model():
   noise = layers.Dropout
   noise_r = 0.1
   
-  inputs, x = inputs_f(self.x.shape[1:], dim, 5, 1, False, "same", noise, noise_r)
-  x = nn.ConvBlock(dim, "conv1d", "resnet", 1, True, None, noise, noise_r)(x)
+  inputs, x = nn.layers.inputs_f(self.x.shape[1:], dim, 5, 1, False, "same", noise, noise_r)
+  x = nn.block.ConvBlock(dim, "conv1d", "resnet", 1, True, None, noise, noise_r)(x)
   out = DQNOutput(DQNOutput, 2, None, noise, noise_r)(x)
   
   model = nn.model.Model(inputs, x)
