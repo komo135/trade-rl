@@ -38,3 +38,29 @@ agent = traderl.agent.DQN(df=csv_url, model_name="efficientnet_b0", lr=1e-4, pip
 
 agent.train()
 ```
+
+# Use custom model
+```python
+import traderl
+from tensorflow.keras import layers, optimizers
+from traderl import nn
+
+csv_url = "https://raw.githubusercontent.com/komo135/forex-historical-data/main/EURUSD/EURUSDh1.csv" # forex data or stoch data
+
+agent = traderl.agent.DQN(df=csv_url, model_name=None, lr=1e-4, pip_scale=25, n=3, use_device="cpu", 
+                          gamma=0.99, train_spread=0.2, spread=10, risk=0.01)
+
+def custom_model():
+  dim = 32
+  noise = layers.Dropout
+  noise_r = 0.1
+  
+  inputs, x = inputs_f(self.x.shape[1:], dim, 5, 1, False, "same", noise, noise_r)
+  x = nn.ConvBlock(dim, "conv1d", "resnet", 1, True, None, noise, noise_r)(x)
+  out = DQNOutput(DQNOutput, 2, None, noise, noise_r)(x)
+  
+  model = nn.model.Model(inputs, x)
+  model.compile(optimizers.Adam(agent.lr, clipnorm=1.), nn.losses.DQNLoss)
+  
+  return model
+```
