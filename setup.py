@@ -21,7 +21,7 @@ setup(
     author='komo135',
     author_email='komoootv@gmail.com',
 
-    url='https://github.com/komo135/',  # パッケージに関連するサイトのURL(GitHubなど)
+    url='https://github.com/komo135/trade-rl',  # パッケージに関連するサイトのURL(GitHubなど)
 
     description='Reinforcement learning is used to learn trades.',
     long_description=long_description,
