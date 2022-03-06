@@ -1,3 +1,9 @@
+# Table of contents
+* [Install](#install)
+* [Technologies](#technologies)
+* [How to run](#how-to-run)
+* [Use custom model](#use-custom-model)
+
 # Install
 ```console
 git clone https://github.com/komo135/trade-rl.git
