@@ -29,7 +29,7 @@ setup(
     keywords='traderl',
 
     classifiers=[
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache-2.0 License',
         'Programming Language :: Python :: 3.7',
     ],
 )
