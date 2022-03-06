@@ -63,4 +63,7 @@ def custom_model():
   model.compile(optimizers.Adam(agent.lr, clipnorm=1.), nn.losses.DQNLoss)
   
   return model
+
+agent._build_model = custom_model
+agent.build_model()
 ```
