@@ -238,7 +238,8 @@ class DQN:
             f"rr = {rr}, ev = {ev}\n"
         )
 
-    def plot_trade(self, train, test, period=1):
+    def plot_trade(self, train=False, test=False, period=1):
+        assert train or test
         h = 0
         if test:
             h = self.test_step[0]
