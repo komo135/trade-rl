@@ -10,9 +10,9 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='traderl',
-    packages=['traderl.agent', 'traderl.agent'],
+    packages=['traderl.agent', 'traderl.nn'],
 
-    version='1.0.0',
+    version='1.0.2',
 
     license='Apache-2.0 License',
 
@@ -29,7 +29,7 @@ setup(
     keywords='traderl',
 
     classifiers=[
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache-2.0 License',
         'Programming Language :: Python :: 3.7',
     ],
 )
