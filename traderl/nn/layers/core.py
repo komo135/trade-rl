@@ -36,7 +36,7 @@ class Output(layers.Layer):
 
 class DQNOutput(Output):
     def __init__(self, output_size, activation=None, noise=layers.Dropout, noise_r=0):
-        super(Output, self).__init__(output_size, activation, noise, noise_r)
+        super(DQNOutput, self).__init__(output_size, activation, noise, noise_r)
 
         self.out = [
             [noise(noise_r), layers.Dense(output_size), layers.Reshape((output_size, 1))]
