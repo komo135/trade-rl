@@ -49,7 +49,7 @@ class ConvBlock(layers.Layer):
             ]
 
         self.l = np.array(self.l)
-        self.l = self.l[self.l != None].reshape((-1,))
+        self.l = list(self.l[self.l != None].reshape((-1,)))
 
     def call(self, inputs, *args, **kwargs):
         x = inputs
