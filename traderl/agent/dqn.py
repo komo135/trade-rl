@@ -60,13 +60,13 @@ class DQN:
         self.x, self.y, self.atr = self.env()
         self.train_step = np.arange(int(len(self.y) * 0.9))
         self.test_step = np.arange(self.train_step[-1], len(self.y))
-        self.ind = self.train_step.copy()
-        np.random.shuffle(self.ind)
 
         if self.model_name:
             self.model, self.target_model = self.build_model()
 
         self.states, self.new_states, self.returns = self.train_data()
+        self.ind = np.arange(len(self.returns))
+        np.random.shuffle(self.ind)
 
         self.max_profit, self.max_pip = 0, 0
         self.now_max_profit, self.now_max_pip = 0, 0
