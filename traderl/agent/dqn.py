@@ -100,7 +100,7 @@ class DQN:
         return x, y, atr
 
     def _build_model(self) -> nn.model.Model:
-        model = nn.build_model(self.model_name, self.x.shape[1:], 2, self.agent_name)
+        model = nn.build_model(self.model_name, self.x.shape[1:], 2, None, self.agent_name)
         model.compile(
             tf.keras.optimizers.Adam(self.lr, clipnorm=1.), loss=self.loss, steps_per_execution=100
         )
