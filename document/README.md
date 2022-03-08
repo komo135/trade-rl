@@ -1,7 +1,6 @@
 # Agnet
 ### traderl.agent.DQN
 ```python
-# type Class
 traderl.agent.DQN(df: pd.DataFrame, model_name, lr=1e-4, pip_scale=25, n=3, use_device="cpu",
                  gamma=0.99, train_spread=0.2, spread=10, risk=0.01)
 ```
