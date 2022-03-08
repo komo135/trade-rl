@@ -8,7 +8,7 @@
 ```console
 git clone https://github.com/komo135/trade-rl.git
 cd trade-rl
-python setup.py install
+pip install .
 ```
 
 # Technologies
