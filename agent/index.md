@@ -13,7 +13,7 @@ url = ""
 agent = traderl.agent.DQN(url, "efficientnet_b0")
 agent.train()
 
-agent.plot_result()
+agent.plot_result(agent.best_w)
 ```
 
 | Args |  |
