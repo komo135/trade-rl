@@ -1,4 +1,4 @@
-# Agnet
+# Agent
 ### traderl.agent.DQN
 ```python
 traderl.agent.DQN(df: pd.DataFrame, model_name, lr=1e-4, pip_scale=25, n=3, use_device="cpu",
