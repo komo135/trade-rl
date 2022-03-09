@@ -1,3 +1,6 @@
+# Document
+[document](https://komo135.github.io/trade-rl)
+
 # Table of contents
 * [Install](#install)
 * [Technologies](#technologies)
