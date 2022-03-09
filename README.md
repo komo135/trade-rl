@@ -66,7 +66,7 @@ def custom_model():
   
   inputs, x = nn.layers.inputs_f(agent.x.shape[1:], dim, 5, 1, False, "same", noise, noise_r)
   x = nn.block.ConvBlock(dim, "conv1d", "resnet", 1, True, None, noise, noise_r)(x)
-  out = DQNOutput(DQNOutput, 2, None, noise, noise_r)(x)
+  out = DQNOutput(2, None, noise, noise_r)(x)
   
   model = nn.model.Model(inputs, x)
   model.compile(optimizers.Adam(agent.lr, clipnorm=1.), nn.losses.DQNLoss)
