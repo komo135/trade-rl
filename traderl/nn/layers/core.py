@@ -54,9 +54,14 @@ class DQNOutput(Output):
         return tf.concat(out, axis=-1)
 
 
-class QRDQNOutput(Output):
+class QRDQNOutput(DQNOutput):
     def __init__(self, output_size, activation=None, noise=layers.Dropout, noise_r=0):
         super(QRDQNOutput, self).__init__(output_size, activation, noise, noise_r)
+
+        self.out = [
+            [noise(noise_r), layers.Dense(output_size * 32), layers.Reshape((output_size, 32, 1))]
+            for _ in range(output_size)
+        ]
 
 
 __all__ = ["inputs_f", "Output", "DQNOutput", "QRDQNOutput"]
