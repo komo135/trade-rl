@@ -1,10 +1,17 @@
 # Agent
+
+## contains of table
+- [DQN](#dqn)
+- [QRDQN](#qrdqn)
+
+## DQN
 ### traderl.agent.DQN
 ```python
 traderl.agent.DQN(df: pd.DataFrame, model_name, lr=1e-4, pip_scale=25, n=3, use_device="cpu",
                  gamma=0.99, train_spread=0.2, spread=10, risk=0.01)
 ```
-Create DQN agent.
+
+[Deep Q-Network (DQN)](https://arxiv.org/abs/1312.5602) is approximates a state-value function in a Q-Learning framework with a neural network. Here we take as input the historical data of forex and stocks and as output the state value of the each action (the average of the rewards).
 
 **Example**
 ```python
@@ -96,3 +103,13 @@ Train the model.
 plot_result(w, risk=0.1)
 ```
 Display the training results on the screen.
+
+
+## QRDQN
+```python
+traderl.agent.DQN(df: pd.DataFrame, model_name, lr=1e-4, pip_scale=25, n=3, use_device="cpu",
+                 gamma=0.99, train_spread=0.2, spread=10, risk=0.01)
+```
+[Quantile Regression DQN (QR-DQN)](https://arxiv.org/abs/1710.10044) builds on [Deep Q-Network (DQN)](https://arxiv.org/abs/1312.5602) and make use of quantile regression to explicitly model the distribution over returns, instead of predicting the mean return (DQN).
+
+qrdqn is created by inheriting from dqn. Therefore, all arguments and methods are the same.
