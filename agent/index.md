@@ -107,7 +107,7 @@ Display the training results on the screen.
 
 ## QRDQN
 ```python
-traderl.agent.DQN(df: pd.DataFrame, model_name, lr=1e-4, pip_scale=25, n=3, use_device="cpu",
+traderl.agent.QRDQN(df: pd.DataFrame, model_name, lr=1e-4, pip_scale=25, n=3, use_device="cpu",
                  gamma=0.99, train_spread=0.2, spread=10, risk=0.01)
 ```
 [Quantile Regression DQN (QR-DQN)](https://arxiv.org/abs/1710.10044) builds on [Deep Q-Network (DQN)](https://arxiv.org/abs/1312.5602) and make use of quantile regression to explicitly model the distribution over returns, instead of predicting the mean return (DQN).
