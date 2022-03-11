@@ -54,9 +54,12 @@ import traderl
 from tensorflow.keras import layers, optimizers
 from traderl import nn
 
-csv_url = "https://raw.githubusercontent.com/komo135/forex-historical-data/main/EURUSD/EURUSDh1.csv" # forex data or stoch data
+# forex data
+df = traderl.data.get_forex_data("EURUSD", "h1")
+# stoch data
+df = traderl.data.get_stock_data("AAPL")
 
-agent = traderl.agent.DQN(df=csv_url, model_name=None, lr=1e-4, pip_scale=25, n=3, use_device="cpu", 
+agent = traderl.agent.DQN(df=df, model_name=None, lr=1e-4, pip_scale=25, n=3, use_device="cpu", 
                           gamma=0.99, train_spread=0.2, spread=10, risk=0.01)
 
 def custom_model():
