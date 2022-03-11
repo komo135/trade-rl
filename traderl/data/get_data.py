@@ -8,6 +8,7 @@ def get_forex_data(symbol: str, timeframe: str):
     :param timeframe: m15, m30, h1, h4, d1
     :return: pandas DataFrame
     """
+    symbol = symbol.upper()
 
     url = "https://raw.githubusercontent.com/komo135/forex-historical-data/main/"
     url += symbol + "/" + symbol + timeframe.lower() + ".csv"
