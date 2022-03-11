@@ -17,7 +17,7 @@ setup(
 
     license='Apache-2.0 License',
 
-    install_requires=['numpy', 'tensorflow', "ta", "pandas", "pandas_datareader"],
+    install_requires=['numpy', 'tensorflow', "ta", "pandas", "pandas_datareader", "matplotlib"],
 
     author='komo135',
     author_email='komoootv@gmail.com',
