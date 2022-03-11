@@ -16,7 +16,7 @@ setup(
 
     license='MIT',
 
-    install_requires=['numpy', 'tensorflow', "ta", "pandas"],
+    install_requires=['numpy', 'tensorflow', "ta", "pandas", "pandas_datareader"],
 
     author='komo135',
     author_email='komoootv@gmail.com',
