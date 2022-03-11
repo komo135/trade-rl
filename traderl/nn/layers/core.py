@@ -55,13 +55,20 @@ class DQNOutput(Output):
 
 
 class QRDQNOutput(DQNOutput):
-    def __init__(self, output_size, activation=None, noise=layers.Dropout, noise_r=0):
+    def __init__(self, output_size, activation=None, noise=layers.Dropout, noise_r=0, quantile_size=32):
         super(QRDQNOutput, self).__init__(output_size, activation, noise, noise_r)
+        self.quantile_size = quantile_size
 
         self.out = [
-            [noise(noise_r), layers.Dense(output_size * 32), layers.Reshape((output_size, 32, 1))]
+            [noise(noise_r), layers.Dense(output_size * quantile_size), layers.Reshape((output_size, quantile_size, 1))]
             for _ in range(output_size)
         ]
+
+    def get_config(self):
+        config = super(QRDQNOutput, self).get_config()
+        config.update({"quantile_size": self.quantile_size})
+
+        return config
 
 
 __all__ = ["inputs_f", "Output", "DQNOutput", "QRDQNOutput"]
