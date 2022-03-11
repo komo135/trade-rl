@@ -17,10 +17,14 @@ class DQNLoss(Loss):
 
 
 class QRDQNLoss(Loss):
-    k = 1
-    plus_tau = np.arange(1, 33, dtype=np.float32) / 33
-    plus_tau = np.reshape(plus_tau, (1, 1, 32, 1))
-    minus_tau = np.abs(plus_tau - 1)
+    def __init__(self, quantile_size=32):
+        super(QRDQNLoss, self).__init__()
+        self.quantile_size = quantile_size
+
+        self.k = 1
+        plus_tau = np.arange(1, quantile_size, dtype=np.float32) / quantile_size
+        self.plus_tau = np.reshape(plus_tau, (1, 1, 32, 1))
+        self.minus_tau = np.abs(self.plus_tau - 1)
 
     def call(self, q_backup, q):
         k = self.k
@@ -32,6 +36,9 @@ class QRDQNLoss(Loss):
         loss = tf.reduce_sum(loss)
 
         return loss
+
+    def get_config(self):
+        return {"quantile_size": self.quantile_size}
 
 
 __all__ = ["DQNLoss", "QRDQNLoss"]
