@@ -1,6 +1,7 @@
 from setuptools import setup
 from codecs import open
 from os import path
+from setuptools import find_packages
 
 here = path.abspath(path.dirname(__file__))
 
@@ -10,11 +11,11 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='traderl',
-    packages=['traderl.agent', 'traderl.agent', 'traderl.data'],
+    packages=find_packages(),
 
-    version='1.0.0',
+    version='1.0.2',
 
-    license='MIT',
+    license='Apache-2.0 License',
 
     install_requires=['numpy', 'tensorflow', "ta", "pandas", "pandas_datareader"],
 
@@ -29,7 +30,7 @@ setup(
     keywords='traderl',
 
     classifiers=[
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache-2.0 License',
         'Programming Language :: Python :: 3.7',
     ],
 )
