@@ -152,7 +152,7 @@ available_network = []
 
 
 def create_network(name, num_layer, dim, layer_name, types, **kwargs):
-    available_network.append(f"{name} b0 ~ b8")
+    available_network.append(f"{name}")
     for i in range(8):
         network_dict.update({f"{name}_b{i}": lambda i=i: BuildModel(num_layer, dim, layer_name, types, i, **kwargs)})
 

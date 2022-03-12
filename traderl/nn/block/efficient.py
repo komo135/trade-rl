@@ -29,7 +29,7 @@ class MBBlock(layers.Layer):
             Activation(),
             SE(int(idim * expand_ratio), se_ratio) if se_ratio > 0 else None,
             noise(noise_r),
-            layer("conv1d", odim, False, kernel_size, 1)
+            layer("conv1d", odim, False, 1, 1)
         ])
         self.l = list(self.l[self.l is not None].reshape((-1,)))
 
