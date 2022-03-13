@@ -2,7 +2,7 @@
 [document](https://komo135.github.io/trade-rl)
 
 # Web Application
-[link](https://github.com/komo135/traderl-web-app)
+[github link](https://github.com/komo135/traderl-web-app)
 ![image](https://user-images.githubusercontent.com/66017773/158076937-9e6daa76-27c7-44ff-af13-56aa70ff2e9c.png)
 
 # Table of contents
